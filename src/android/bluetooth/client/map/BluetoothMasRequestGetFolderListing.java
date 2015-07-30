@@ -21,8 +21,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
-import javax.obex.ClientSession;
-import javax.obex.HeaderSet;
+import javax.btobex.ClientSession;
+import javax.btobex.HeaderSet;
 
 final class BluetoothMasRequestGetFolderListing extends BluetoothMasRequest {
 
@@ -44,7 +44,7 @@ final class BluetoothMasRequestGetFolderListing extends BluetoothMasRequest {
 
         ObexAppParameters oap = new ObexAppParameters();
 
-        if (maxListCount > 0) {
+        if (maxListCount >= 0) {
             oap.add(OAP_TAGID_MAX_LIST_COUNT, (short) maxListCount);
         }
 
